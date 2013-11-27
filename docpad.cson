@@ -1,0 +1,22 @@
+templateData:
+  site:
+    title: "Introduction to DocPad"
+    url: "http://github.com/robloach/slides-docpad"
+    description: """
+      A next generation web architecture allowing for content management via the
+      file system, rendering via plugins, and static site generation for
+      deployment anywhere.
+      """
+    keywords: """
+      DocPad, openbar()
+      """
+
+    # The website's styles
+    styles: [
+      'main.css'
+    ]
+
+    # The website's scripts
+    scripts: [
+      'main.js'
+    ]

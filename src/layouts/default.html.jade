@@ -1,0 +1,15 @@
+doctype 5
+head(lang="en")
+  meta(charset="utf-8")
+  title
+    != site.title
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  != getBlock("meta").add(site.meta).toHTML()
+  != getBlock("styles").add(site.styles).toHTML()
+
+body
+  .reveal
+    .slides
+      != content
+
+  != getBlock('scripts').add(site.scripts, {defer:"defer", async:"async"}).toHTML()

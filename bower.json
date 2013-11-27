@@ -1,0 +1,7 @@
+{
+  "name": "robloach-slides-docpad",
+  "version": "0.0.1",
+  "dependencies": {
+    "components-revealjs": "~2.5.0"
+  }
+}

@@ -1,0 +1,14 @@
+/**
+ * Provide the default Reveal.js styling.
+ */
+@import "./vendor/components-revealjs/css/reveal.css";
+@import "./vendor/components-revealjs/css/theme/night.css";
+
+/**
+ * Include the correct Reveal.js full screen image plugin.
+ */
+@import "./vendor/reveal.js-fullscreen-img/fullscreen-img.css";
+
+/**
+ * Custom modifications
+ */
