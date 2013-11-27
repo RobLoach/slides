@@ -19,7 +19,8 @@
     "grunt-contrib-less": "~0.8.2",
     "grunt-contrib-cssmin": "~0.7.0",
     "grunt-webpack": "~0.11.1",
-    "script-loader": "~0.5.1"
+    "script-loader": "~0.5.1",
+    "docpad-plugin-ghpages": "~2.4.0"
   },
   "devDependencies": {
     "docpad-plugin-livereload": "~2.5.3",
