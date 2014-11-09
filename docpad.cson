@@ -1,7 +1,7 @@
 templateData:
   site:
-    title: "Introduction to DocPad"
-    url: "http://github.com/robloach/slides-docpad"
+    title: "Rob Loach"
+    url: "http://github.com/robloach/slides"
     description: """
       A next generation web architecture allowing for content management via the
       file system, rendering via plugins, and static site generation for

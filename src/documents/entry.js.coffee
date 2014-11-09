@@ -1,3 +1,7 @@
+---
+webpack: true
+---
+
 # Load Reveal.js with the Webpack Script Loader.
 require 'script!./vendor/components-revealjs/js/reveal.js'
 
