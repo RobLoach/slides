@@ -21,47 +21,98 @@ section(data-background="2016-10-21-composer/harper.jpg")
     a(href="http://kalamuna.com") Kalamuna
 
 // Dependency Hell
-section(data-background="2016-10-21-composer/hell.jpg")
+section(data-background="2016-10-21-composer/hell.png")
   h2 Dependency Hell
   ul
     li.fragment Copy and Paste all modules
     li.fragment Can miss a dependency
+    li.fragment Include individual PHP files
     li.fragment Difficult to upgrade
     li.fragment Version-conflicts
 
-// Install Composer
-section
-  h2 Installing COMPOSER!
-  pre
-    code.javascript var hi = 'Hello Woorld!'
+// Composer Overview
+section(data-background="2016-10-21-composer/welcome.gif")
+  h2 Welcome Composer
+  ul
+    li.fragment Installs full dependency trees
+    li.fragment Resolves version constraints
+    li.fragment PHP Autoloading
+    li.fragment Easily upgrade all dependencies
 
-// PHP Composer require()
+// Installing Composer
+section(data-background="2016-10-21-composer/matrix-pill.jpg")
+  h2 Install Composer
+  pre.fragment
+    code.bash| php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+      | php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+      | php composer-setup.php
+      | php -r "unlink('composer-setup.php');"
+  h3.fragment
+    a(href="http://getcomposer.org") getcomposer.org
+
+// Using Composer
+section(data-background="2016-10-21-composer/i-know-kung-fu.gif")
+  h2 Using Composer
+  pre
+    code.bash composer
+    code.bash.fragment composer init
+    code.bash.fragment composer install
+    code.bash.fragment composer require symfony/yaml
+
+// PHP Usage of Composer
+section(data-background="2016-10-21-composer/matrix-whoa.gif")
+  h2 Using Composer
+  h3 In PHP
+  pre
+    code.bash require 'vendor/autoload.php';
+    code.php.fragment use Symfony\Component\Yaml\Yaml;
+    code.php.fragment $value = Yaml::parse(file_get_contents('file.yml'));
 
 // Composer Global
-
-// Install Drush with Composer
-// Install Composer with Composer
+section(data-background="2016-10-21-composer/global.jpg")
+  h2 Composer Global
+  h3.fragment User-based dependencies 
+  pre
+    code.bash.fragment composer global require drush/drush
+    code.bash.fragment composer global exec drush
+    code.bash.fragment export PATH=$PATH:~/.composer/vendor/bin
+    code.bash.fragment drush
+    code.bash.fragment composer global require composer/composer
 
 // Composer Global Require
-// https://github.com/consolidation/cgr
+section(data-background="2016-10-21-composer/global.jpg")
+  h2 Composer Global Require
+  h3
+    a(href="https://github.com/consolidation/cgr") github.com/consolidation/cgr
+  p Cleans up some of the require paths for global dependencies
+  p.fragment By Good ol' Greg Anderson
 
 // Composer Versions Check
 // https://github.com/Soullivaneuh/composer-versions-check/
+section(data-background="2016-10-21-composer/composer-versions-check.gif")
+  h2 Composer Versions Check
+  div.fragment
+    pre
+      code.bash composer global require sllh/composer-versions-check
+      code.bash.fragment composer update
+      code.bash.fragment| 1 package is not up to date:
+        | - symfony/yaml (3.0.1) latest is 3.1.5
 
-
-
-
-
-
-
-
-
-
-section
-  h2 Thank You
+// Toran Proxy
+// https://toranproxy.com/
+section(data-background="2016-10-21-composer/toran.gif")
+  h2
+    a(href="https://toranproxy.com/") ToranProxy.com
   p
-    img(src="2013-11-27-docpad/victory-baby.jpg")
-  h4| Now go use <a href="http://docpad.org">DocPad</a>
+    img(src="2016-10-21-composer/toran.png")
+  ul
+    li.fragment Fast Composer deployment
+    li.fragment Private repositories
+    li.fragment Funds Composer development!
+
+section(data-background="2016-10-21-composer/inception-spinning.gif")
+  h2 Thank You
+  h4| Now go use <a href="http://getcomposer.org">Composer</a>
   ul
     li
       a(href="http://robloach.net") robloach.net
