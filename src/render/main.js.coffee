@@ -8,6 +8,14 @@ require 'script!./vendor/reveal.js/js/reveal.js'
 
 # Initialize and run Reveal with the given options.
 Reveal.initialize
+  dependencies: [
+    {
+    	src: 'vendor/reveal.js/plugin/highlight/highlight.js',
+    	async: true,
+    	callback: () =>
+    		hljs.initHighlightingOnLoad()
+    }
+  ]
   controls: true
   progress: true
   history: true

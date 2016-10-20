@@ -3,7 +3,25 @@
  */
 @import "./vendor/reveal.js/css/reveal.css";
 @import "./vendor/reveal.js/css/theme/night.css";
+@import "./vendor/highlightjs/styles/monokai_sublime.css";
 
 /**
  * Custom modifications
  */
+
+ /**
+  * Makde the slide backgrounds a bit darker.
+  */
+.slide-background:after {
+	content: '\A';
+	position: absolute;
+	width: 100%; 
+	height:100%;
+	top:0; 
+	left:0;
+	background:rgba(0,0,0,0.5);
+	opacity: 1;
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
