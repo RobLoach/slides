@@ -1,17 +1,15 @@
-Intro to DocPad
-===============
+# Rob Loach's Slides
 
-Slides for the Introduction to [DocPad](http://docpad.org) presentation at [openBar()](http://www.meetup.com/openBarToronto/events/149563372/).
+[Slides for various presentations](http://robloach.github.io/slides/) that I've done...
 
+- [Composer Pro Tips at BADCamp, 2016](http://robloach.github.io/slides/composer-pro-tips.html)
+- [Introduction to DocPad at openBar()](http://robloach.github.io/slides/docpad.html)
 
-Dependencies
-------------
+## Dependencies
 
 * [npm](https://npmjs.org)
 
-
-Build
------
+## Usage
 
 ``` bash
 $ npm install
