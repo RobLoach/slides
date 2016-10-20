@@ -1,8 +1,8 @@
 /**
  * Provide the default Reveal.js styling.
  */
-@import "./vendor/components-revealjs/css/reveal.css";
-@import "./vendor/components-revealjs/css/theme/night.css";
+@import "./vendor/reveal.js/css/reveal.css";
+@import "./vendor/reveal.js/css/theme/night.css";
 
 /**
  * Custom modifications
