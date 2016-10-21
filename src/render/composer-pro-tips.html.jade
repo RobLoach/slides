@@ -98,6 +98,21 @@ section(data-background="2016-10-21-composer/composer-versions-check.gif")
       code.bash.fragment| 1 package is not up to date:
         | - symfony/yaml (3.0.1) latest is 3.1.5
 
+// Composer Scripts
+section(data-background="2016-10-21-composer/code.jpg")
+  h2 Composer Scripts
+  div.fragment
+    pre
+      code.json| {
+        |   "name": "mycomposer",
+        |   "scripts": {
+        |     "test": "behat",
+        |     "awesometime": "echo 'Hello World'"
+        |   }
+        | }
+  pre.fragment
+    code.bash composer awesometime
+
 // Toran Proxy
 // https://toranproxy.com/
 section(data-background="2016-10-21-composer/toran.gif")
