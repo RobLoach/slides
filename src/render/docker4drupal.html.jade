@@ -1,0 +1,159 @@
+---
+layout: 'default'
+---
+
+// Title
+section(data-background="2017-10-18-docker4drupal/docker4drupal.jpeg")
+  h1 Docker4Drupal
+  p| By <a href="http://robloach.net">Rob Loach</a> - Kalamuna
+  p
+    small| October 19th, 2017 - <a href="https://2017.badcamp.net">BADCamp, 2017</a>
+  p
+    a(href="http://robloach.github.io/slides") robloach.github.io/slides
+
+// Rob Loach
+section(data-background="2017-10-18-docker4drupal/robloach.jpg")
+  h2 Rob Loach
+  p| <a href="http://robloach.net">robloach.net</a> / <a href="http://robloach.net">@RobLoach</a> / <a href="http://github.com/robloach">GitHub</a>
+  p
+    a(href="http://robloach.net")
+      img(src="robloach.jpg")
+  p
+    a(href="http://kalamuna.com") Kalamuna
+
+// Local Development Sucks
+section(data-background="2017-10-18-docker4drupal/picardfacepalm.gif")
+  h2 Local Development Suck
+  ul
+    li.fragment Difficult to install complete stacks
+      ul.fragment
+        li Web server? Apache, Nginx, Express
+        li.fragment Language? PHP, Node.js, Python
+        li.fragment Database? MySQL, Postgres, CouchDB
+    li.fragment Unable to switch services
+    li.fragment Slow re-install process
+    li.fragment Version inconsistancy across team
+
+// Docker4Drupal
+section(data-background="2017-10-18-docker4drupal/data.gif")
+  div
+    h2 "VMs are out, Containers are in"
+    h4 -- Michelle Krejci
+  ul.fragment
+    li DDev
+    li Lando
+    li Outrigger
+
+// Docker4Drupal
+section(data-background="2017-10-18-docker4drupal/data.gif")
+  h2 Docker4Drupal
+  ul
+    li.fragment Optimized Docker Containers for Drupal
+    li.fragment Simple Docker Compose Configs
+    li.fragment Focus on local development
+    li.fragment Unique per project
+    li.fragment Swappable Services
+
+// Services
+section(data-background="2017-10-18-docker4drupal/scotty.gif")
+  h2 Features
+  ul
+    li.fragment Simple to setup
+    li.fragment Servers: Nginx, Apache
+    li.fragment Platform: Drupal 6, 7, 8
+    li.fragment PHP: 5.3, 5.6, 7.0, 7.1
+    li.fragment Database: MariaDB
+    li.fragment Other stuffs: Redis, Varnish, Solr, Node.js, Memcache, Webgrid, Blackfire, Syslog, AthenaPDF, Mailhog, Adminer, phpMyAdmin, Portainer, Traefik
+
+// Installing
+section(data-background="2017-10-18-docker4drupal/transport.gif")
+  h2 Installation
+  div.fragment
+    img(src="2017-10-18-docker4drupal/dockerlogo.png")
+  h4.fragment 1. Docker
+  h4.fragment 2. Docker Compose
+  
+
+// PHP Usage of Composer
+section(data-background="2017-10-18-docker4drupal/two.gif")
+  h2 Two Methods
+  h5
+    a(href="https://github.com/wodby/docker4drupal") github.com/wodby/docker4drupal
+  h3.fragment 1. Vanilla
+  h3.fragment 2. Mounted
+
+// PHP Usage of Composer
+section(data-background="2017-10-18-docker4drupal/vanilla.gif")
+  h2 Vanilla
+  ul
+    li.fragment Download docker-compose.yml
+    li.fragment docker-compose up
+    li.fragment http://drupal.docker.localhost:8000
+
+section(data-background="2017-10-18-docker4drupal/yes.gif")
+  h2 Mounted
+  ul
+    li.fragment Download docker-compose.yml to your Drupal root
+    li.fragment Update nginx/php mount locations
+      ul
+        li
+          code ./:/var/www/html
+    li.fragment Update settings.php to match MariaDB service
+    li.fragment
+      code docker-compose up
+    li.fragment http://drupal.docker.localhost:8000
+
+section(data-background="2017-10-18-docker4drupal/but.gif")
+  h2 But what about...
+  div.fragment
+    h4 Composer
+    code docker-compose run php composer
+  div.fragment
+    h4 Drush
+    code docker-compose run php drush
+  div.fragment
+    h4 Drupal Console
+    code docker-compose run php drupal
+  div.fragment
+    h4 "SSH in?"
+    code docker-compose run php bash
+
+section(data-background="2017-10-18-docker4drupal/riker.gif")
+  h2 Exposing Services
+  h4.fragment Traefik manages routing
+  pre.fragment
+    code labels:
+    code - 'traefik.backend=pma'
+    code - 'traefik.port=80'
+    code - 'traefik.frontend.rule=Host:pma.project.docker.localhost'
+  p.fragment pma.drupal.docker.localhost:8000
+  p.fragment adminer.drupal.docker.localhost:8000
+  p.fragment servicename.drupal.docker.localhost:8000
+
+section(data-background="2017-10-18-docker4drupal/ships.gif")
+  h2 What Now?
+  ul
+    li.fragment Containerize Everything
+    li.fragment Hosting-Integration - Lagoon/Platform.sh/Pantheon/DO
+    li.fragment ChatOps? IRC, Slack?
+    li.fragment AI?
+
+section
+  h2 "Simplify, Simplify, Simplify"
+  h4 -- Henry David Thoreau
+
+// Composer Global
+section(data-background="2017-10-18-docker4drupal/engage.gif")
+  h2
+    code docker-compose down
+  ul
+    li
+      a(href="http://robloach.github.io/slides") robloach.github.io/slides
+    li docs.docker4drupal.org
+    li github.com/wodby/docker4drupal
+    li docs.docker.com/compose
+
+section(data-background="2017-10-18-docker4drupal/livelong.gif")
+  h2 Thank You
+  h5
+    a(href="http://robloach.github.io/slides") robloach.github.io/slides
