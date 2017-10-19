@@ -27,6 +27,7 @@
   "scripts": {
     "test": "docpad generate",
     "start": "docpad-server",
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "deploy": "docpad  deploy-ghpages --env static"
   }
 }
