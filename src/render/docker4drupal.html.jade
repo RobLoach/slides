@@ -1,0 +1,142 @@
+---
+layout: 'default'
+---
+
+// Title
+section(data-background="2017-10-18-docker4drupal/docker4drupal.jpeg")
+  h1 Docker4Drupal
+  p| By <a href="http://robloach.net">Rob Loach</a> / <a href="http://twitter.com/robloach">@RobLoach</a>
+  p
+    small| October 18th, 2017 - <a href="https://2017.badcamp.net">BADCamp, 2017</a>
+
+// Rob Loach
+section(data-background="2017-10-18-docker4drupal/robloach.jpg")
+  h2 Rob Loach
+  p| <a href="http://robloach.net">robloach.net</a> / <a href="http://robloach.net">@RobLoach</a> / <a href="http://github.com/robloach">GitHub</a>
+  p
+    a(href="http://robloach.net")
+      img(src="robloach.jpg")
+  p
+    a(href="http://kalamuna.com") Kalamuna
+
+// Local Development Sucks
+section(data-background="2017-10-18-docker4drupal/picardfacepalm.gif")
+  h2 Local Development Sucks
+  ul
+    li.fragment Difficult to install complete stacks
+      ul.fragment
+        li Web server? Apache, Nginx, Express
+        li.fragment Language? PHP, Node.js, Python
+        li.fragment Database? MySQL, Postgres, CouchDB
+    li.fragment Unable to switch services
+    li.fragment Slow re-install process
+    li.fragment Version inconsistancy across team
+
+// Docker4Drupal
+section(data-background="2016-10-21-composer/welcome.gif")
+  h2 Docker4Drupal
+  ul
+    li.fragment Optimized Docker Containers for Drupal
+    li.fragment Focus on local development
+    li.fragment Uses standard Docker Compose configurations
+    li.fragment Drupal 6, 7, 8
+    li.fragment PHP 5, 7
+
+// Services
+section(data-background="2016-10-21-composer/matrix-pill.jpg")
+  h2 Services
+  ul
+    li.fragment Servers: Nginx, Apache
+    li.fragment Platform: Drupal 6, 7, 8
+    li.fragment PHP: 5.3, 5.6, 7.0, 7.1
+    li.fragment Database: MariaDB
+    li.fragment Other stuffs: Redis, Varnish, Solr, Node.js, Memcache, Webgrid, Blackfire, Syslog, AthenaPDF, Mailhog, Adminer, phpMyAdmin, Portainer, Traefik
+
+// Installing
+section(data-background="2016-10-21-composer/i-know-kung-fu.gif")
+  h2 Installation
+  div
+    img(src="2017-10-18-docker4drupal/dockerlogo.png")
+  ul
+    li Install Docker
+    li.fragment Install Docker Compose
+
+// PHP Usage of Composer
+section(data-background="2016-10-21-composer/matrix-whoa.gif")
+  h2 Using Composer
+  h3 In PHP
+  pre
+    code.bash require 'vendor/autoload.php';
+    code.php.fragment use Symfony\Component\Yaml\Yaml;
+    code.php.fragment $value = Yaml::parse(file_get_contents('file.yml'));
+
+// Composer Global
+section(data-background="2016-10-21-composer/global.jpg")
+  h2 Composer Global
+  h3.fragment User-based dependencies 
+  pre
+    code.bash.fragment composer global require drush/drush
+    code.bash.fragment composer global exec drush
+    code.bash.fragment export PATH=$PATH:~/.composer/vendor/bin
+    code.bash.fragment drush
+    code.bash.fragment composer global require composer/composer
+
+// Composer Global Require
+section(data-background="2016-10-21-composer/global.jpg")
+  h2 Composer Global Require
+  h3
+    a(href="https://github.com/consolidation/cgr") github.com/consolidation/cgr
+  p Cleans up some of the require paths for global dependencies
+  p.fragment By Good ol' Greg Anderson
+
+// Composer Versions Check
+// https://github.com/Soullivaneuh/composer-versions-check/
+section(data-background="2016-10-21-composer/composer-versions-check.gif")
+  h2 Composer Versions Check
+  div.fragment
+    pre
+      code.bash composer global require sllh/composer-versions-check
+      code.bash.fragment composer update
+      code.bash.fragment| 1 package is not up to date:
+        | - symfony/yaml (3.0.1) latest is 3.1.5
+
+// Composer Scripts
+section(data-background="2016-10-21-composer/code.jpg")
+  h2 Composer Scripts
+  div.fragment
+    pre
+      code.json| {
+        |   "name": "mycomposer",
+        |   "scripts": {
+        |     "test": "behat",
+        |     "awesometime": "echo 'Hello World'"
+        |   }
+        | }
+  pre
+    code.bash.fragment composer test
+    code.bash.fragment --- Runs Behat! 
+    code.bash.fragment composer awesometime
+    code.bash.fragment --- Hello World
+
+// Toran Proxy
+// https://toranproxy.com/
+section(data-background="2016-10-21-composer/toran.gif")
+  h2
+    a(href="https://toranproxy.com/") ToranProxy.com
+  p
+    img(src="2016-10-21-composer/toran.png")
+  ul
+    li.fragment Fast Composer deployment
+    li.fragment Private repositories
+    li.fragment Funds Composer development!
+
+section(data-background="2016-10-21-composer/inception-spinning.gif")
+  h2 Thank You
+  h4| Now go use <a href="http://getcomposer.org">Composer</a>
+  ul
+    li
+      a(href="http://robloach.net") robloach.net
+    li
+      a(href="http://twitter.com/robloach") @RobLoach
+    li
+      a(href="http://github.com/robloach") GitHub
