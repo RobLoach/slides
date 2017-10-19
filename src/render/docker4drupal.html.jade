@@ -5,9 +5,11 @@ layout: 'default'
 // Title
 section(data-background="2017-10-18-docker4drupal/docker4drupal.jpeg")
   h1 Docker4Drupal
-  p| By <a href="http://robloach.net">Rob Loach</a> / <a href="http://twitter.com/robloach">@RobLoach</a>
+  p| By <a href="http://robloach.net">Rob Loach</a> - Kalamuna
   p
-    small| October 18th, 2017 - <a href="https://2017.badcamp.net">BADCamp, 2017</a>
+    small| October 19th, 2017 - <a href="https://2017.badcamp.net">BADCamp, 2017</a>
+  p
+    a(href="http://robloach.github.io/slides") robloach.github.io/slides
 
 // Rob Loach
 section(data-background="2017-10-18-docker4drupal/robloach.jpg")
@@ -21,7 +23,7 @@ section(data-background="2017-10-18-docker4drupal/robloach.jpg")
 
 // Local Development Sucks
 section(data-background="2017-10-18-docker4drupal/picardfacepalm.gif")
-  h2 Local Development Sucks
+  h2 Local Development Suck
   ul
     li.fragment Difficult to install complete stacks
       ul.fragment
@@ -33,19 +35,30 @@ section(data-background="2017-10-18-docker4drupal/picardfacepalm.gif")
     li.fragment Version inconsistancy across team
 
 // Docker4Drupal
-section(data-background="2016-10-21-composer/welcome.gif")
+section(data-background="2017-10-18-docker4drupal/data.gif")
+  div
+    h2 "VMs are out, Containers are in"
+    h4 -- Michelle Krejci
+  ul.fragment
+    li DDev
+    li Lando
+    li Outrigger
+
+// Docker4Drupal
+section(data-background="2017-10-18-docker4drupal/data.gif")
   h2 Docker4Drupal
   ul
     li.fragment Optimized Docker Containers for Drupal
+    li.fragment Simple Docker Compose Configs
     li.fragment Focus on local development
-    li.fragment Uses standard Docker Compose configurations
-    li.fragment Drupal 6, 7, 8
-    li.fragment PHP 5, 7
+    li.fragment Unique per project
+    li.fragment Swappable Services
 
 // Services
-section(data-background="2016-10-21-composer/matrix-pill.jpg")
-  h2 Services
+section(data-background="2017-10-18-docker4drupal/scotty.gif")
+  h2 Features
   ul
+    li.fragment Simple to setup
     li.fragment Servers: Nginx, Apache
     li.fragment Platform: Drupal 6, 7, 8
     li.fragment PHP: 5.3, 5.6, 7.0, 7.1
@@ -53,90 +66,94 @@ section(data-background="2016-10-21-composer/matrix-pill.jpg")
     li.fragment Other stuffs: Redis, Varnish, Solr, Node.js, Memcache, Webgrid, Blackfire, Syslog, AthenaPDF, Mailhog, Adminer, phpMyAdmin, Portainer, Traefik
 
 // Installing
-section(data-background="2016-10-21-composer/i-know-kung-fu.gif")
+section(data-background="2017-10-18-docker4drupal/transport.gif")
   h2 Installation
-  div
+  div.fragment
     img(src="2017-10-18-docker4drupal/dockerlogo.png")
-  ul
-    li Install Docker
-    li.fragment Install Docker Compose
+  h4.fragment 1. Docker
+  h4.fragment 2. Docker Compose
+  
 
 // PHP Usage of Composer
-section(data-background="2016-10-21-composer/matrix-whoa.gif")
-  h2 Using Composer
-  h3 In PHP
-  pre
-    code.bash require 'vendor/autoload.php';
-    code.php.fragment use Symfony\Component\Yaml\Yaml;
-    code.php.fragment $value = Yaml::parse(file_get_contents('file.yml'));
+section(data-background="2017-10-18-docker4drupal/two.gif")
+  h2 Two Methods
+  h5
+    a(href="https://github.com/wodby/docker4drupal") github.com/wodby/docker4drupal
+  h3.fragment 1. Vanilla
+  h3.fragment 2. Mounted
+
+// PHP Usage of Composer
+section(data-background="2017-10-18-docker4drupal/vanilla.gif")
+  h2 Vanilla
+  ul
+    li.fragment Download docker-compose.yml
+    li.fragment docker-compose up
+    li.fragment http://drupal.docker.localhost:8000
+
+section(data-background="2017-10-18-docker4drupal/yes.gif")
+  h2 Mounted
+  ul
+    li.fragment Download docker-compose.yml to your Drupal root
+    li.fragment Update nginx/php mount locations
+      ul
+        li
+          code ./:/var/www/html
+    li.fragment Update settings.php to match MariaDB service
+    li.fragment
+      code docker-compose up
+    li.fragment http://drupal.docker.localhost:8000
+
+section(data-background="2017-10-18-docker4drupal/but.gif")
+  h2 But what about...
+  div.fragment
+    h4 Composer
+    code docker-compose run php composer
+  div.fragment
+    h4 Drush
+    code docker-compose run php drush
+  div.fragment
+    h4 Drupal Console
+    code docker-compose run php drupal
+  div.fragment
+    h4 "SSH in?"
+    code docker-compose run php bash
+
+section(data-background="2017-10-18-docker4drupal/riker.gif")
+  h2 Exposing Services
+  h4.fragment Traefik manages routing
+  pre.fragment
+    code labels:
+    code - 'traefik.backend=pma'
+    code - 'traefik.port=80'
+    code - 'traefik.frontend.rule=Host:pma.project.docker.localhost'
+  p.fragment pma.drupal.docker.localhost:8000
+  p.fragment adminer.drupal.docker.localhost:8000
+  p.fragment servicename.drupal.docker.localhost:8000
+
+section(data-background="2017-10-18-docker4drupal/ships.gif")
+  h2 What Now?
+  ul
+    li.fragment Containerize Everything
+    li.fragment Hosting-Integration - Lagoon/Platform.sh/Pantheon/DO
+    li.fragment ChatOps? IRC, Slack?
+    li.fragment AI?
+
+section
+  h2 "Simplify, Simplify, Simplify"
+  h4 -- Henry David Thoreau
 
 // Composer Global
-section(data-background="2016-10-21-composer/global.jpg")
-  h2 Composer Global
-  h3.fragment User-based dependencies 
-  pre
-    code.bash.fragment composer global require drush/drush
-    code.bash.fragment composer global exec drush
-    code.bash.fragment export PATH=$PATH:~/.composer/vendor/bin
-    code.bash.fragment drush
-    code.bash.fragment composer global require composer/composer
-
-// Composer Global Require
-section(data-background="2016-10-21-composer/global.jpg")
-  h2 Composer Global Require
-  h3
-    a(href="https://github.com/consolidation/cgr") github.com/consolidation/cgr
-  p Cleans up some of the require paths for global dependencies
-  p.fragment By Good ol' Greg Anderson
-
-// Composer Versions Check
-// https://github.com/Soullivaneuh/composer-versions-check/
-section(data-background="2016-10-21-composer/composer-versions-check.gif")
-  h2 Composer Versions Check
-  div.fragment
-    pre
-      code.bash composer global require sllh/composer-versions-check
-      code.bash.fragment composer update
-      code.bash.fragment| 1 package is not up to date:
-        | - symfony/yaml (3.0.1) latest is 3.1.5
-
-// Composer Scripts
-section(data-background="2016-10-21-composer/code.jpg")
-  h2 Composer Scripts
-  div.fragment
-    pre
-      code.json| {
-        |   "name": "mycomposer",
-        |   "scripts": {
-        |     "test": "behat",
-        |     "awesometime": "echo 'Hello World'"
-        |   }
-        | }
-  pre
-    code.bash.fragment composer test
-    code.bash.fragment --- Runs Behat! 
-    code.bash.fragment composer awesometime
-    code.bash.fragment --- Hello World
-
-// Toran Proxy
-// https://toranproxy.com/
-section(data-background="2016-10-21-composer/toran.gif")
+section(data-background="2017-10-18-docker4drupal/engage.gif")
   h2
-    a(href="https://toranproxy.com/") ToranProxy.com
-  p
-    img(src="2016-10-21-composer/toran.png")
+    code docker-compose down
   ul
-    li.fragment Fast Composer deployment
-    li.fragment Private repositories
-    li.fragment Funds Composer development!
+    li
+      a(href="http://robloach.github.io/slides") robloach.github.io/slides
+    li docs.docker4drupal.org
+    li github.com/wodby/docker4drupal
+    li docs.docker.com/compose
 
-section(data-background="2016-10-21-composer/inception-spinning.gif")
+section(data-background="2017-10-18-docker4drupal/livelong.gif")
   h2 Thank You
-  h4| Now go use <a href="http://getcomposer.org">Composer</a>
-  ul
-    li
-      a(href="http://robloach.net") robloach.net
-    li
-      a(href="http://twitter.com/robloach") @RobLoach
-    li
-      a(href="http://github.com/robloach") GitHub
+  h5
+    a(href="http://robloach.github.io/slides") robloach.github.io/slides
